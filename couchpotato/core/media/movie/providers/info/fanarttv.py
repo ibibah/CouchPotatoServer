@@ -22,7 +22,7 @@ class FanartTV(MovieProvider):
     http_time_between_calls = 0
 
     def __init__(self):
-        addEvent('movie.info', self.getArt, priority = 1)
+        addEvent('movie.info', self.getArt, priority = 3)
 
     def getArt(self, identifier = None, extended = True, **kwargs):
 
@@ -108,7 +108,7 @@ class FanartTV(MovieProvider):
         image_urls = []
         pool = []
         for image in images:
-            if image.get('lang') == 'en':
+            if image.get('lang') == 'fr':
                 pool.append(image)
         orig_pool_size = len(pool)
 
